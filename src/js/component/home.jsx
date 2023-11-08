@@ -13,11 +13,12 @@ const Home = () => {
 	return (
 		<div className="text-center">
 			<h1>My To do</h1>
-			<ul>
-				<li>
+			<div>
+			<ul className="list-group">
+				<li className="list-group-item">
 					 <input 
 					 	type="text"
-						onChange={(e) => setInputValue(e.target.Value)}
+						onChange={(e) => setInputValue(e.target.value)}
 						value={inputValue}
 						onKeyPress={(e) => {
 							if (e.key === "Enter") {
@@ -25,19 +26,27 @@ const Home = () => {
 								setInputValue("");
 							}
 						}} 
-						placeholder="what do yuo need to do?">
+						placeholder="What do you need to do?">
 					 </input>
 				 </li>
 				 {todo.map((item, index) => (
-					<li>
-						{item} <i class="fa fa-trash" 
+					<li className="list-group-item d-flex justify-content-between">
+						<span className="">
+							{item}
+						</span>
+						<span className=""> 
+							<i className="fa fa-trash" 
 						onClick={() => setTodo(todo.filter((t, currentIndex) => index != currentIndex))}></i>
+						</span> 
+						
 					</li>
 				 ))}
 			</ul>
 			<div>
-				 {todo.length}task
+				 {todo.length} task
 			</div>
+			</div>
+			
 		</div>
 	);
 };
