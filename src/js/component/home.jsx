@@ -31,10 +31,10 @@ const Home = () => {
 				 </li>
 				 {todo.map((item, index) => (
 					<li className="list-group-item d-flex justify-content-between">
-						<span className="">
+						<span className="todo_list_task">
 							{item}
 						</span>
-						<span className=""> 
+						<span className="todoList_delete"> 
 							<i className="fa fa-trash" 
 						onClick={() => setTodo(todo.filter((t, currentIndex) => index != currentIndex))}></i>
 						</span> 
